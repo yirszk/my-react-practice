@@ -13,6 +13,12 @@
     <div id="root"></div>
     <script type="text/babel">
       (() => {
+        const name = "Suzuki";
+
+        function showMessage() {
+          alert('Hello');
+        }
+
         ReactDOM.render(
           <div>
             <p>Hello! {name.toUpperCase()}</p>
@@ -20,6 +26,9 @@
             <p>Hello, World</p>
             <hr/>
             <div className="box"></div>
+            <hr/>
+            <div style={{width:80, height:80, backgroundColor:'tomato'}}
+            onClick={showMessage}></div>
           </div>,
           document.getElementById('root')
         );
