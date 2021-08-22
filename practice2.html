@@ -15,8 +15,30 @@
       (() => {
         const name = "Suzuki";
 
-        function Counter(props) {
-          return <li style={{backgroundColor:props.color}}>div</li>
+        class Counter extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              count: 0
+            };
+            this.countUp
+          }
+          countUp() {
+            this.setState(prevState => {
+              return {
+                count: prevState.count + 1
+              }
+            });
+          }
+          render() {
+            return (
+              <li style={{backgroundColor:this.props.color}} onClick={
+                this.countUp
+              }>
+                {this.state.count}
+              </li>
+            )
+          }
         }
 
         ReactDOM.render(
